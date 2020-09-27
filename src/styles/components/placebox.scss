@@ -1,0 +1,33 @@
+.placebox{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.8rem;
+}
+.placebox__img{
+  width:13.6rem;
+  border-top-left-radius: 1.2rem;
+  border-bottom-left-radius: 1.2rem;
+}
+.placebox__contents{
+  overflow: hidden;
+  padding: 1.2rem;
+  color: black;
+}
+.placebox__name{
+  font-size:1.6rem;
+  font-weight: bold;
+}
+.placebox__description{
+  font-size: 1.4rem;
+  color: rgb(10,10,10);
+  margin-top: 0.8rem;
+}
+.placebox__address{
+  font-size: 1.2rem;
+  color: gray;
+  margin-top: 0.6rem;
+}
+.placebox__pin{
+  margin-top: 4rem;
+  font-size: 1.2rem;
+}

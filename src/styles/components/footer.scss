@@ -1,0 +1,19 @@
+.footer{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  height: 3.2rem;
+  padding:1.6rem;
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+}
+
+.footer a{
+  width: 15%;
+  height: auto;
+}
+.footer img{
+  width: 3.2rem;
+  height: 3.2rem;
+}
