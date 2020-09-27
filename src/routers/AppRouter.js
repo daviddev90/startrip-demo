@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import CategoryPage from '../components/CategoryPage';
 import CupholderPage from '../components/CupholderPage';
 import Footer from '../components/Footer';
 import HomePage from '../components/HomePage';
@@ -14,7 +13,6 @@ const AppRouter = () => (
         <Route path="/" component={HomePage} exact={true} />
         <Route path="/cupholder" component={CupholderPage} />
         <Route path="/place/:id" component={PlacePage} />
-        <Route path="/category" component={CategoryPage} />
         <Route component={NotFoundPage} />
       </Switch>
       <Footer />

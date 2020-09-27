@@ -1,40 +1,46 @@
 import React from 'react';
 import '../../node_modules/react-image-gallery/styles/scss/image-gallery.scss';
 import ImageGallery from 'react-image-gallery';
-
-//todo: 이들은 DB에서 받아오겠지요오오
-const images = [
-  {
-    original: 'https://picsum.photos/id/1018/1000/600/'
-  },
-  {
-    original: 'https://picsum.photos/id/1015/1000/600/'
-  },
-  {
-    original: 'https://picsum.photos/id/1019/1000/600/'
-  }
-];
+import database from '../firebase/firebase';
 
 class StoryBoard extends React.Component {
+  state = {
+    stories: []
+  };
+
+  componentDidMount = () => {
+    database
+      .ref('stories')
+      .once('value')
+      .then((snap) => {
+        const stories = snap.val();
+        this.setState({
+          stories: stories
+        });
+      });
+  };
+
+  handleImgClick = (e) => {
+    const imageIndex =
+      e.target.parentElement.parentElement
+        .getAttribute('aria-label')
+        .split('Go to Slide ')[1] *
+        1 -
+      1;
+
+    location.href = this.state.stories[imageIndex].linkTo;
+  };
   render() {
     return (
       <ImageGallery
-        items={images}
+        items={this.state.stories}
         showNav={false}
         showThumbnails={false}
         showFullscreenButton={false}
         showPlayButton={false}
-        autoPlay={false}
+        autoPlay={true}
         showBullets={true}
-        onClick={(e) => {
-          const imageIndex =
-            e.target.parentElement.parentElement
-              .getAttribute('aria-label')
-              .split('Go to Slide ')[1] *
-              1 -
-            1;
-          console.log(imageIndex);
-        }}
+        onClick={this.handleImgClick}
       />
     );
   }

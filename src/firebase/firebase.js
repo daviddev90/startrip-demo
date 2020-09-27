@@ -15,12 +15,3 @@ firebase.initializeApp(config);
 const database = firebase.database();
 
 export { firebase, database as default };
-
-//child_removed 유용 - 제거된 녀석의 key와 value를 가져옴
-// database.ref('expenses').on('child_removed', (snap) => {
-//   console.log(snap.key, snap.val());
-// });
-
-// database.ref('expenses').on('child_changed', (snap) => {
-//   console.log(snap.key, snap.val());
-// });

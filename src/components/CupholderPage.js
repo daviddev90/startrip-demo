@@ -26,7 +26,6 @@ class CupholderPage extends React.Component {
         this.setState({
           events: events
         });
-        console.log(events);
       });
   }
 

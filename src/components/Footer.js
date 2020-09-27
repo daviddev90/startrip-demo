@@ -8,9 +8,6 @@ const Footer = () => (
     <a href="/cupholder">
       <img src="/imgs/icon--tumbler.png" />
     </a>
-    <a href="/category">
-      <img src="/imgs/icon--category.png" />
-    </a>
   </footer>
 );
 
